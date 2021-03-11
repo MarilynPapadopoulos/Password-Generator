@@ -23,41 +23,39 @@ generateBtn.addEventListener("click", function() {
   if (upperCase) {
     alert("You chose to include UPPERCASE");
     
-    console.log(choices);
+    
   } else { alert("You chose not to include UPPERCASE");}
 
    lowerCase = confirm("Would you like to include LOWERCASE characters in your password?");
    if (lowerCase){
     alert("You chose to include LOWERCASE");
     
-    console.log(choices);
+    
   } else { alert("You chose not to include LOWERCASE");}
 
    numberCharacters = confirm("Would you like to include NUMBERS characters in your password?");
    if (numberCharacters){
     alert("You chose to include NUMBERS");
     
-    console.log(choices);
+    
   } else { alert("You chose not to include NUMBERS");}
 
    specialCharacters = confirm("Would you like to include SPECIAL CHARACTERS in your password?");
    if (specialCharacters){
     alert("You chose to include SPECIAL CHARACTERS");
      
-    console.log(choices);
+    
   } 
   else { alert("You chose not to include SPECIAL CHARACTERS");}
 
    var length = function() {
-     passwordLength = prompt("Choose your desired password length between 8 and 128");
-     passwordLength = parseInt(passwordLength);
-     console.log(passwordLenght);
-
-     if (passwordLength < 8 && paswordLength > 128) {
+      passwordLength = parseInt(prompt("Choose your desired password length between 8 and 128"));
+      console.log(passwordLength);
+    if (passwordLength < 8 || passwordLength > 128) {
       alert("Please choose choose a number between 8 and 128");
-      }
-    };
-    length();
+      return length();
+    }
+  };
    
 },false);
 
@@ -69,14 +67,29 @@ generateBtn.addEventListener("click", function() {
 //function writePassword() {
 
 // set the lenght of the passwordArray to passwordLength
+  //passwordArray.length = passwordLength;
+//  passwordArray
 
+//   for (var i = 0; i >=  passwordLength)  {
+//     
 
-//   for (var i = 0; i >=  passwordLength, i++)  {
-//     if (upperCase){
-//       add upperArr[i] to the password;
-//       password.push 
+//    if (upperCase){
+//       var value= upperArr[Math.floor(Math.random (i) * upperArr.length)]; to the password;
+//       password.push value
 //   }
-  
+//     else if (lowerCase) {
+//       add upperArr[i] to the password;
+// //       password.push 
+//     }
+//     else if (numbers){
+//       add upperArr[i] to the password;
+// //       password.push 
+//     }
+//     else (specialCharacter) {
+//       add upperArr[i] to the password;
+// //       password.push 
+//     }
+//     i++
 // }
   //var password = generatePassword();
   //var passwordText = document.querySelector("#password");
