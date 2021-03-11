@@ -53,10 +53,11 @@ generateBtn.addEventListener("click", function() {
       console.log(passwordLength);
     if (passwordLength < 8 || passwordLength > 128) {
       alert("Please choose choose a number between 8 and 128");
-      return length();
     }
+    
   };
-   
+  length();
+  console.log(passwordLength);
 },false);
 
 
