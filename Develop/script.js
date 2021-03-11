@@ -53,10 +53,12 @@ generateBtn.addEventListener("click", function() {
       console.log(passwordLength);
     if (passwordLength < 8 || passwordLength > 128) {
       alert("Please choose choose a number between 8 and 128");
+      length();
     }
-    
+  
   };
   length();
+ 
   console.log(passwordLength);
 },false);
 
@@ -64,34 +66,39 @@ generateBtn.addEventListener("click", function() {
 
 
 
-// Write password to the #password input
-//function writePassword() {
+// Write password to the #password input  ( a text area inside a div)
+
+// function writePassword() {
+//   for (var i = 0; i >=  passwordLength; i++)  {
+        
+//        if (upperCase){
+//           var value= upperArr[Math.floor(Math.random (i) * upperArr.length)]; 
+//           console.log(value);
+          
+//           //to the password;
+//           //password.push value
+//         }
+//         else if (lowerCase) {
+//           var value= upperArr[Math.floor(Math.random (i) * upperArr.length)]; 
+//           console.log(value);
+//         }
+//         else if (numberCharacters){
+//           var value= upperArr[Math.floor(Math.random (i) * upperArr.length)]; 
+//           console.log(value);
+//         }
+//         else (specialCharacters) {
+//           var value= upperArr[Math.floor(Math.random (i) * upperArr.length)]; 
+//           console.log(value);
+//         }
+//         i++;
+//   }
+// };
 
 // set the lenght of the passwordArray to passwordLength
   //passwordArray.length = passwordLength;
 //  passwordArray
 
-//   for (var i = 0; i >=  passwordLength)  {
-//     
-
-//    if (upperCase){
-//       var value= upperArr[Math.floor(Math.random (i) * upperArr.length)]; to the password;
-//       password.push value
-//   }
-//     else if (lowerCase) {
-//       add upperArr[i] to the password;
-// //       password.push 
-//     }
-//     else if (numbers){
-//       add upperArr[i] to the password;
-// //       password.push 
-//     }
-//     else (specialCharacter) {
-//       add upperArr[i] to the password;
-// //       password.push 
-//     }
-//     i++
-// }
+//   
   //var password = generatePassword();
   //var passwordText = document.querySelector("#password");
 
