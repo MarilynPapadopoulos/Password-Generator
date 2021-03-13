@@ -5,7 +5,7 @@ var upperCase;
 var lowerCase; 
 var numberCharacters;
 var specialCharacters;
-var passwordLength;
+var chosenLength;
 
 var choices=0;
 
@@ -24,10 +24,8 @@ generateBtn.addEventListener("click", function() {
     alert("You chose to include UPPERCASE");
     choices++;
     
-    
   } else { alert("You chose not to include UPPERCASE");}
   
-
    lowerCase = confirm("Would you like to include LOWERCASE characters in your password?");
    if (lowerCase){
     alert("You chose to include LOWERCASE");
@@ -50,27 +48,31 @@ generateBtn.addEventListener("click", function() {
   } 
   else { alert("You chose not to include SPECIAL CHARACTERS");}
 
-   var length = function() {
-      passwordLength = parseInt(prompt("Choose your desired password length between 8 and 128"));
-      console.log("passoword length", passwordLength);
-    if (passwordLength < 8 || passwordLength > 128) {
-      alert("Please choose choose a number between 8 and 128");
-      length();
-    }
-    return passwordLength;
+  // fucnction to get password length
+    var length = function() {
+      chosenLength = parseInt(prompt("Choose your desired password length between 8 and 128"));
+      console.log("password length", chosenLength);
+    if (chosenLength < 8 || chosenLength > 128) {
+        alert("Please choose choose a number between 8 and 128");
+        length();
+    }   
+
   };
   length();
-  
-  var newPasswordLength = length();
-  
-  writePassword();
  
-  console.log("password length", passwordLength);
+  writePassword();
+
+
+
+var password = writePassword();
+password.length = chosenLength;
+console.log(password);
+
+var passwordText = document.querySelector("#password");
+console.log(passwordText);
+  passwordText.value=password;
+  
 },false);
-
-
-
-
 
 // Write password to the #password input  ( a text area inside a div, appendChild?)
 
@@ -78,9 +80,8 @@ var passwordArray = [];
 var writePassword = function() {
 
   // divide the chosen password length by the number of selected password options. 
-  var numInEachCategory =  Math.ceil(passwordLength/choices);
+  var numInEachCategory =  Math.ceil(chosenLength/choices);
   
-//  for (var x = 0; x < passwordLength; x++)  {
 
         // check to see if each element is true.  if true, randomly select numInEachCategory from array. push to passwordArray
    
@@ -112,27 +113,15 @@ var writePassword = function() {
           } 
         }
       return passwordArray;
-  //}
 };
-
-var password = writePassword();
-
-
-
-// console.log("long",password);
-// // set the length of the password to passwordLength
-// console.log(passwordLength);
-//  //password.length = passwordLength;
-//  console.log("short",password);
- 
-
-//   
+   
   //var password = generatePassword();
-  //var passwordText = document.querySelector("#password");
+ // var passwordText = document.querySelector("#password");
+  //passwordText.querySelector("Your Secure Password").innerHTML=password;
 
+
+
+//var passwordText = document.querySelector("#password");
   //passwordText.value = password;
 
-//}
 
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
