@@ -18,41 +18,51 @@ var specialArr = ["!","@","#","$","%","&","?","<",">","+"];
 var generateBtn = document.querySelector("#generate");
 
 generateBtn.addEventListener("click", function() {
-  alert("Please select whether you would like to include: UPPERCASE, LOWERCASE, NUMBERS and SPECIAL CHARACTERS"); 
-  upperCase = confirm("Would you like to include UPPERCASE characters in your password?");
-  if (upperCase) {
-    alert("You chose to include UPPERCASE");
-    choices++;
+
+  var characters = function() {
+    alert("Please select whether you would like to include: UPPERCASE, LOWERCASE, NUMBERS and SPECIAL CHARACTERS"); 
+    upperCase = confirm("Would you like to include UPPERCASE characters in your password?");
+    if (upperCase) {
+      alert("You chose to include UPPERCASE");
+      choices++;
+      
+    } else { alert("You chose not to include UPPERCASE");}
     
-  } else { alert("You chose not to include UPPERCASE");}
-  
-   lowerCase = confirm("Would you like to include LOWERCASE characters in your password?");
-   if (lowerCase){
-    alert("You chose to include LOWERCASE");
-    choices++;
+    lowerCase = confirm("Would you like to include LOWERCASE characters in your password?");
+    if (lowerCase){
+      alert("You chose to include LOWERCASE");
+      choices++;
+      
+    } else { alert("You chose not to include LOWERCASE");}
     
-  } else { alert("You chose not to include LOWERCASE");}
-  
-   numberCharacters = confirm("Would you like to include NUMBERS characters in your password?");
-   if (numberCharacters){
-    alert("You chose to include NUMBERS");
-    choices++;
+    numberCharacters = confirm("Would you like to include NUMBERS characters in your password?");
+    if (numberCharacters){
+      alert("You chose to include NUMBERS");
+      choices++;
+      
+    } else { alert("You chose not to include NUMBERS");}
     
-  } else { alert("You chose not to include NUMBERS");}
-  
-   specialCharacters = confirm("Would you like to include SPECIAL CHARACTERS in your password?");
-   if (specialCharacters){
-    alert("You chose to include SPECIAL CHARACTERS");
-    choices++; 
-   
-  } 
-  else { alert("You chose not to include SPECIAL CHARACTERS");}
+    specialCharacters = confirm("Would you like to include SPECIAL CHARACTERS in your password?");
+    if (specialCharacters){
+      alert("You chose to include SPECIAL CHARACTERS");
+      choices++; 
+    
+    } 
+    else { alert("You chose not to include SPECIAL CHARACTERS");}
+
+    if(upperCase ===false && lowerCase ===false  && numberCharacters  ===false && specialCharacters ===false ) {
+      alert("Please select at least one.");
+      characters();
+    
+    }
+};
+characters();
 
   // fucnction to get password length
     var length = function() {
       chosenLength = parseInt(prompt("Choose your desired password length between 8 and 128"));
       console.log("password length", chosenLength);
-    if (chosenLength < 8 || chosenLength > 128) {
+    if (chosenLength < 8 || chosenLength > 128 ) {
         alert("Please choose choose a number between 8 and 128");
         length();
     }   
@@ -70,7 +80,7 @@ console.log(password);
 
 var passwordText = document.querySelector("#password");
 console.log(passwordText);
-  passwordText.value=password;
+  passwordText.value=password.join(" ");
   
 },false);
 
